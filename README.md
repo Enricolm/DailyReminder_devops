@@ -47,17 +47,16 @@ Uma API para controle de atividades diárias.
 
 ```js
 {
-    atividade_id: 1,
-    atividade: 'Treinar',
-    dia: '2023-03-04',
-    duracao: 01:30:00,
-    semana_atividade: [
-        1: 'segunda-feira',
-        2: 'terça-feira',
-        3: 'quarta-feira',
-        4: 'quinta-feira',
-        5: 'sexta-feira',
-    ]
+    "id": 9,
+    "duracao": 60,
+    "dataDia": "2023-10-11",
+    "atividade": "Estudar",
+    "created_at": "2023-10-11",
+    "lembrete": {
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
+        }
 }
 ```
 
