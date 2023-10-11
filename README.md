@@ -29,7 +29,7 @@ Uma API para controle de atividades diárias.
 
 ## Cadastrar Atividade
 
-`POST` /api/x
+`POST` /api/atividades
 
 
 **Campos de Requisição**
@@ -40,7 +40,7 @@ Uma API para controle de atividades diárias.
 | atividade | texto | Sim | Um nome para uma atividade a ser realizada de no máximo 50 caracteres. |
 | data | Data | Sim | A data da atividade. |
 | duracao | DateTime | Não | A duração do tempo da atividade. |
-| semana_atividade | int | Sim | O número relativo ao dia da semana. |
+| lembretes | String | Sim | Lembrete que já está cadastrado |
 
 
 **Exemplo de Corpo de Requisição**
