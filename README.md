@@ -71,7 +71,7 @@ Uma API para controle de atividades diárias.
 
 ## Detalhar Atividade
 
-`GET` /api/x/{id}
+`GET` /api/atividades/{id}
 
 **Exemplo de Corpo de Requisição**
 
@@ -105,7 +105,7 @@ Uma API para controle de atividades diárias.
 
 ## Atualizar Atividade
 
-`PATCH` /api/x/{id}
+`PATCH` /api/atividades/{id}
 
 **Exemplo de Corpo de Requisição**
 
@@ -133,7 +133,7 @@ Uma API para controle de atividades diárias.
 
 ## Deletar Atividade
 
-`DELETE` /api/x/{id}
+`DELETE` /api/atividades/{id}
 
 **Código de Resposta**
 
