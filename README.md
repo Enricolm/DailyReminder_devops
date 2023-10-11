@@ -12,18 +12,12 @@ Uma API para controle de atividades diárias.
     - [Atualizar](#atualizar-atividade)
     - [Deletar](#deletar-atividade)
     - [Mostrar Todos](#detalhar-todas-atividades)
-- Dias
-    - [Cadastrar](#cadastrar-dias)
-    - [Mostrar Detalhes](#detalhar-dias)
-    - [Atualizar](#atualizar-dias)
-    - [Deletar](#deletar-dias)
-    - [Mostrar Todos](#detalhar-todos-dias)
-- Semanas
-    - [Cadastrar](#cadastrar-semanas)
-    - [Mostrar Detalhes](#detalhar-semanas)
-    - [Atualizar](#atualizar-semanas)
-    - [Deletar](#deletar-semanas)
-    - [Mostrar Todos](#detalhar-todas-semanas)
+- Lembrete
+    - [Cadastrar](#cadastrar-lembrete)
+    - [Mostrar Detalhes](#detalhar-lembrete)
+    - [Atualizar](#atualizar-lembrete)
+    - [Deletar](#deletar-lembrete)
+    - [Mostrar Todos](#detalhar-todos-lembretes)
 
 ---
 
@@ -191,7 +185,7 @@ Uma API para controle de atividades diárias.
 
 ---
 
-## Cadastrar Dias
+## Cadastrar Lembrete
 
 `POST` /api/x
 
@@ -207,8 +201,9 @@ Uma API para controle de atividades diárias.
 
 ```js
 {
-    data_id: 1,
-    data: '2023-03-04',
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
 }
 ```
 
@@ -221,7 +216,7 @@ Uma API para controle de atividades diárias.
 
 ---
 
-## Detalhar Dias
+## Detalhar Lembrete
 
 `GET` /api/x/{id}
 
@@ -229,8 +224,9 @@ Uma API para controle de atividades diárias.
 
 ```js
 {
-    data_id: 1,
-    data: '2023-03-04',
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
 }
 ```
 
@@ -244,7 +240,7 @@ Uma API para controle de atividades diárias.
 
 ---
 
-## Atualizar Dias
+## Atualizar Lembrete
 
 `PATCH` /api/x/{id}
 
@@ -252,8 +248,9 @@ Uma API para controle de atividades diárias.
 
 ```js
 {
-    data_id: 2,
-    data: '2023-03-05',
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
 }
 ```
 
@@ -265,7 +262,7 @@ Uma API para controle de atividades diárias.
 | 404 | Não existe despesa com o id informado. |
 | 406 | Dado inválido ou errado. |
 
-## Deletar Dias
+## Deletar Lembrete
 
 `DELETE` /api/x/{id}
 
@@ -277,7 +274,7 @@ Uma API para controle de atividades diárias.
 | 404 | Não existe despesa com o id informado. |
 
 
-## Detalhar Todos Dias
+## Detalhar Todos Lembretes
 
 `GET` /api/x/
 
@@ -287,148 +284,15 @@ Uma API para controle de atividades diárias.
 {
     [
         {
-            data_id: 1,
-            data: '2023-03-04',
+            "id": 1,
+            "mensagem": "Jogar GTA",
+            "duracao": 60
         },
         {
-            data_id: 2,
-            data: '2023-03-05',
-        }
-    ]
-}
-```
-
-**Código de Resposta**
-
-| Código | Descrição |
-| - | - |
-| 200 | Dados retornados com sucesso. | 
-| 204 | Sem conteúdo. |
-| 400 | Má Requisição ou probida. |
-| 404 | Não existe despesa com o id informado. |
-
----
-
-## Cadastrar Semanas
-
-`POST` /api/x
-
-
-**Campos de Requisição**
-
-| Campo | Tipo | Obrigatório | Descrição |
-|-------|------|:-------------:|-----------|
-| atividade_semana_id | int | Sim | O código da semana. |
-| semana | Int | Sim | O número relativo ao dia da semana escolhido pelo usuário. |
-
-**Exemplo de Corpo de Requisição**
-
-```js
-{
-    atividade_semana_id: 1,
-    semana: [
-        1: 'segunda-feira',
-        2: 'terça-feira',
-    ]
-}
-```
-
-**Código de Resposta**
-
-| Código | Descrição |
-| - | - |
-| 201 | Despesa criada com sucesso. | 
-| 400 | Os campos enviados são inválidos. |
-
----
-
-## Detalhar Semanas
-
-`GET` /api/x/{id}
-
-**Exemplo de Corpo de Requisição**
-
-```js
-{
-    atividade_semana_id: 1,
-    semana: [
-        1: 'segunda-feira',
-        2: 'terça-feira',
-    ]
-}
-```
-
-**Código de Resposta**
-
-| Código | Descrição |
-| - | - |
-| 200 | Dados retornados com sucesso. |
-| 204 | Sem conteúdo. |
-| 404 | Não existe despesa com o id informado. |
-
----
-
-## Atualizar Semanas
-
-`PATCH` /api/x/{id}
-
-**Exemplo de Corpo de Requisição**
-
-```js
-{
-    atividade_semana_id: 2,
-    semana: [
-        5: 'sexta-feira',
-        6: 'sábado',
-        7: 'domingo',
-    ]
-}
-```
-
-**Código de Resposta**
-
-| Código | Descrição |
-| - | - |
-| 201 | Dado atualizado com sucesso. | 
-| 404 | Não existe despesa com o id informado. |
-| 406 | Dado inválido ou errado. |
-
-## Deletar Semanas
-
-`DELETE` /api/x/{id}
-
-**Código de Resposta**
-
-| Código | Descrição |
-| - | - |
-| 200 | Dado deletado com sucesso. | 
-| 404 | Não existe despesa com o id informado. |
-
-
-## Detalhar Todas Semanas
-
-`GET` /api/x/
-
-**Exemplo de Corpo de Requisição**
-
-```js
-{
-    [
-        {
-            atividade_semana_id: 1,
-            semana: [
-                1: 'segunda-feira',
-                2: 'terça-feira',
-            ],
-        }
-        {
-            atividade_semana_id: 2,
-            semana: [
-                5: 'sexta-feira',
-                6: 'sábado',
-                7: 'domingo',
-            ],
-        }
+            "id": 1,
+            "mensagem": "Jogar GTA",
+            "duracao": 60
+        },
     ]
 }
 ```
