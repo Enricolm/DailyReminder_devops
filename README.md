@@ -105,15 +105,16 @@ Uma API para controle de atividades diárias.
 
 ```js
 {
-    atividade_id: 2,
-    atividade: 'Estudar',
-    dia: '2023-03-04',
-    duracao: 02:30:00,
-    semana_atividade: [
-        'terça-feira',
-        'quarta-feira',
-        'quinta-feira',
-    ]
+    "id": 9,
+    "duracao": 60,
+    "dataDia": "2023-10-11",
+    "atividade": "Estudar",
+    "created_at": "2023-10-11",
+    "lembrete": {
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
+        }
 }
 ```
 
@@ -139,37 +140,36 @@ Uma API para controle de atividades diárias.
 
 ## Detalhar Todas Atividades
 
-`GET` /api/x/
+`GET` /api/atividades/{id}
 
 **Exemplo de Corpo de Requisição**
 
 ```js
 {
-    [
-        {
-            atividade_id: 1,
-            atividade: 'Treinar',
-            dia: '2023-03-04',
-            duracao: 01:30:00,
-            semana_atividade: [
-                'segunda-feira',
-                'terça-feira',
-                'quarta-feira',
-                'quinta-feira',
-                'sexta-feira',
-            ]
-        },
-        {
-            atividade_id: 2,
-            atividade: 'Estudar',
-            dia: '2023-03-04',
-            duracao: 02:30:00,
-            semana_atividade: [
-                'terça-feira',
-                'quarta-feira',
-                'quinta-feira',
-            ] 
+    [{
+    "id": 9,
+    "duracao": 60,
+    "dataDia": "2023-10-11",
+    "atividade": "Estudar",
+    "created_at": "2023-10-11",
+    "lembrete": {
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
         }
+},
+        {
+    "id": 9,
+    "duracao": 60,
+    "dataDia": "2023-10-11",
+    "atividade": "Estudar",
+    "created_at": "2023-10-11",
+    "lembrete": {
+        "id": 1,
+        "mensagem": "Jogar GTA",
+        "duracao": 60
+        }
+}
     ]
 }
 ```
@@ -187,7 +187,7 @@ Uma API para controle de atividades diárias.
 
 ## Cadastrar Lembrete
 
-`POST` /api/x
+`POST` /api/lembretes/{id}
 
 
 **Campos de Requisição**
@@ -218,7 +218,7 @@ Uma API para controle de atividades diárias.
 
 ## Detalhar Lembrete
 
-`GET` /api/x/{id}
+`GET` /api/lembretes/{id}
 
 **Exemplo de Corpo de Requisição**
 
@@ -242,7 +242,7 @@ Uma API para controle de atividades diárias.
 
 ## Atualizar Lembrete
 
-`PATCH` /api/x/{id}
+`PATCH` /api/lembretes/{id}
 
 **Exemplo de Corpo de Requisição**
 
@@ -264,7 +264,7 @@ Uma API para controle de atividades diárias.
 
 ## Deletar Lembrete
 
-`DELETE` /api/x/{id}
+`DELETE` /api/lembretes/{id}
 
 **Código de Resposta**
 
@@ -276,7 +276,7 @@ Uma API para controle de atividades diárias.
 
 ## Detalhar Todos Lembretes
 
-`GET` /api/x/
+`GET` /api/lembretes/
 
 **Exemplo de Corpo de Requisição**
 
